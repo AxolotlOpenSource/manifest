@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
 
-  <remote  name="aosp"
-           fetch="https://android.googlesource.com"
-           review="https://android-review.googlesource.com"
-           revision="refs/tags/android-10.0.0_r29" />
-
     <remote name="ax"
            fetch=".."
            review="https://github.com/AxolotlOpenSource/"
            revision="refs/heads/ax-Q" />
+
+  <remote  name="aosp"
+           fetch="https://android.googlesource.com"
+           review="https://android-review.googlesource.com"
+           revision="refs/tags/android-10.0.0_r29" />
 
     <remote  name="caf"
            fetch="https://source.codeaurora.org/quic/la/"
