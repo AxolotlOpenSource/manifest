@@ -2,7 +2,7 @@
 <manifest>
 
     <!-- Github remote -->
-    <remote  name="xpe"
+    <remote name="xpe"
            fetch=".."
            revision="refs/heads/xpe-14.0" />
 
@@ -14,11 +14,13 @@
     <remove-project name="platform/frameworks/native" />
     <project path="frameworks/native" name="TheXPerienceProject/android_frameworks_native" groups="pdk" remote="xpe"  />
     <remove-project name="platform/frameworks/opt/net/wifi" />
-    <project path="frameworks/opt/net/wifi" name="TheXPerienceProject/android_frameworks_opt_net_wifi" groups="pdk" remote="x"  />
+    <project path="frameworks/opt/net/wifi" name="TheXPerienceProject/android_frameworks_opt_net_wifi" groups="pdk" remote="xpe"  />
     <remove-project name="platform/frameworks/opt/telephony" />
     <project path="frameworks/opt/telephony" name="TheXPerienceProject/android_frameworks_opt_telephony" groups="pdk" remote="xpe" />
 
     <!--Hardware-->
+    <remove-project name="platform/hardware/interfaces" />
+    <project path="hardware/interfaces"  name="TheXPerienceProject/android_hardware_interfaces" remote="xpe" />
     <project path="hardware/libhardware" name="TheXPerienceProject/android_hardware_libhardware" groups="pdk" remote="xpe" />
     <remove-project name="platform/hardware/libhardware_legacy" />
     <project path="hardware/libhardware_legacy" name="TheXPerienceProject/android_hardware_libhardware_legacy" groups="pdk" remote="xpe" />
