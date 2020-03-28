@@ -19,8 +19,7 @@
     <project path="frameworks/opt/telephony" name="TheXPerienceProject/android_frameworks_opt_telephony" groups="pdk" remote="xpe" />
 
     <!--Hardware-->
-    <remove-project name="platform/hardware/interfaces" />
-    <project path="hardware/interfaces"  name="TheXPerienceProject/android_hardware_interfaces" remote="xpe" />
+    <remove-project name="platform/hardware/libhardware" />
     <project path="hardware/libhardware" name="TheXPerienceProject/android_hardware_libhardware" groups="pdk" remote="xpe" />
     <remove-project name="platform/hardware/libhardware_legacy" />
     <project path="hardware/libhardware_legacy" name="TheXPerienceProject/android_hardware_libhardware_legacy" groups="pdk" remote="xpe" />
