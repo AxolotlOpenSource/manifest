@@ -6,6 +6,64 @@
            fetch=".."
            revision="refs/heads/xpe-14.0" />
 
+    <!-- Build-->
+    <remove-project name="platform/art" />
+    <project path="art" name="AxolotlOpenSource/android_art" groups="pdk" remote="ax" />
+    <remove-project name="platform/bionic" />
+    <project path="bionic" name="AxolotlOpenSource/android_bionic" groups="pdk" remote="ax" />
+
+    <!-- Bootable -->
+    <remove-project name="platform/bootable/recovery" />
+    <project path="bootable/recovery" name="TheXPerienceProject/android_bootable_recovery" groups="pdk" remote="xpe" />
+
+    <!-- Build-->
+    <remove-project name="platform/build" />
+    <project path="build/make" name="AxolotlOpenSource/android_build" groups="pdk" remote="ax" >
+      <copyfile src="core/root.mk" dest="Makefile" />
+      <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
+      <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
+      <linkfile src="core" dest="build/core" />
+      <linkfile src="envsetup.sh" dest="build/envsetup.sh" />
+      <linkfile src="target" dest="build/target" />
+      <linkfile src="tools" dest="build/tools" />
+    </project>
+    <remove-project name="platform/build/blueprint" />
+    <project name="AxolotlOpenSource/android_build_blueprint" path="build/blueprint" remote="ax" />
+    <remove-project name="platform/build/soong" />
+    <project path="build/soong" name="AxolotlOpenSource/android_build_soong" groups="pdk,tradefed" remote="ax" >
+      <linkfile src="root.bp" dest="Android.bp" />
+      <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
+    </project>
+
+    <!--Development -->
+    <remove-project name="platform/development" />
+    <project path="development" name="TheXPerienceProject/android_development" remote="xpe" />
+
+    <!--device-->
+    <remove-project name="device/generic/goldfish" />
+    <remove-project name="device/generic/goldfish-opengl"/>
+    <remove-project name="device/qcom/common" />
+    <project path="device/qcom/common" name="AxolotlOpenSource/android_device_qcom_common" remote="ax" />
+
+    <!-- External -->
+    <remove-project name="platform/external/ant-wireless/ant_native" />
+    <project path="external/ant-wireless/ant_native" name="TheXPerienceProject/android_external_ant-wireless_ant_native" remote="xpe" />
+    <project path="external/ant-wireless/antradio-library" name="TheXPerienceProject/android_external_ant-wireless_antradio-library" remote="xpe" />
+    <remove-project name="platform/external/arm-optimized-routines" />
+    <project path="external/arm-optimized-routines" name="TheXPerienceProject/android_external_arm-optimized-routines" remote="xpe" />
+    <remove-project name="platform/external/e2fsprogs" />
+    <project path="external/e2fsprogs" name="TheXPerienceProject/android_external_e2fsprogs" groups="pdk" remote="xpe"  />
+    <project path="external/exfat" name="LineageOS/android_external_exfat" remote="github" revision="lineage-17.0" />
+    <remove-project name="platform/external/libjpeg-turbo" />
+    <project name="TheXPerienceProject/android_external_libjpeg-turbo" path="external/libjpeg-turbo" remote="xpe" />
+    <project path="external/ntfs-3g" name="LineageOS/android_external_ntfs-3g" remote="github" revision="lineage-17.0" />
+    <remove-project name="platform/external/selinux" />
+    <project path="external/selinux" name="TheXPerienceProject/android_external_selinux" groups="pdk" remote="xpe" />
+    <remove-project name="platform/external/skia"/>
+    <project name="TheXPerienceProject/android_external_skia" path="external/skia" remote="xpe"/>
+    <remove-project name="platform/external/zlib" />
+    <project name="TheXPerienceProject/android_external_zlib" path="external/zlib" remote="xpe" />
+
     <!--Frameworks-->
     <remove-project name="platform/frameworks/av" />
     <project path="frameworks/av" name="AxolotlOpenSource/android_frameworks_av" groups="pdk-cw-fs,pdk-fs" remote="ax"  />
@@ -19,6 +77,8 @@
     <project path="frameworks/opt/telephony" name="TheXPerienceProject/android_frameworks_opt_telephony" groups="pdk" remote="xpe" />
 
     <!--Hardware-->
+    <remove-project name="platform/hardware/interfaces" />
+    <project path="hardware/interfaces"  name="TheXPerienceProject/android_hardware_interfaces" remote="xpe" />
     <remove-project name="platform/hardware/libhardware" />
     <project path="hardware/libhardware" name="TheXPerienceProject/android_hardware_libhardware" groups="pdk" remote="xpe" />
     <remove-project name="platform/hardware/libhardware_legacy" />
@@ -43,7 +103,89 @@
     <project path="hardware/qcom/wlan" name="TheXPerienceProject/android_hardware_qcom_wlan" groups="qcom_wlan,pdk-qcom" remote="xpe" />
     <remove-project name="platform/hardware/ril" />
     <project path="hardware/ril" name="TheXPerienceProject/android_hardware_ril" groups="pdk" remote="xpe" />
+    <project path="hardware/axolotl/interfaces" name="AxolotlOpenSource/android_hardware_axolotl_interfaces" groups="pdk" remote="ax" />
+
+    <!--LIBS-->
+    <remove-project name="platform/libcore" />
+    <project path="libcore" name="TheXPerienceProject/android_libcore" remote="xpe" />
+
+    <!-- Prebuilts -->
+    <project path="prebuilts/openssl" name="LineageOS/android_prebuilts_openssl" clone-depth="1" remote="github" revision="lineage-17.0"/>
+    <project path="prebuilts/tools-lineage" name="TheXPerienceProject/android_prebuilts_tools-lineage" clone-depth="1" remote="xpe"/>
+    <remove-project name="platform/prebuilts/r8"/>
+    <project name="TheXPerienceProject/android_prebuilts_r8" path="prebuilts/r8" clone-depth="1" remote="xpe" />
+    <project path="prebuilts/clang/host/linux-x86/clang-r377782c" name="TheXPerienceProject/android_prebuilts_clang_host_linux-x86_clang-r377782c" clone-depth="1" remote="xpe"/>
+
+
+    <!-- System -->
+    <project path="system/tools/dtbtool" name="TheXPerienceProject/android_system_tools_dtbtool" groups="pdk" remote="xpe" />
+    <remove-project name="platform/system/libhidl" />
+    <project path="system/libhidl" name="TheXPerienceProject/android_system_libhidl" remote="xpe" groups="xpe" />
+    <remove-project name="platform/system/qcom" />
+    <project path="vendor/qcom/opensource/softap" name="TheXPerienceProject/android_system_qcom" groups="qcom" remote="xpe" />
+    <remove-project name="platform/system/sepolicy" />
+    <project path="system/sepolicy" name="TheXPerienceProject/android_system_sepolicy" groups="pdk" remote="xpe" />
+    <remove-project name="platform/system/update_engine" />
+    <project path="system/update_engine" name="TheXPerienceProject/android_system_update_engine" groups="pdk" remote="xpe" />
+    <remove-project name="platform/system/vold" />
+    <project path="system/vold" name="TheXPerienceProject/android_system_vold" groups="pdk" remote="xpe" />
     
+    <!-- Vendor -->
+    <remove-project name="platform/vendor/qcom-opensource/bluetooth" />
+    <project path="vendor/qcom/opensource/commonsys/bluetooth" name="TheXPerienceProject/android_vendor_qcom_opensource_commonsys_bluetooth" remote="xpe" />
+    <remove-project name="platform/vendor/qcom-opensource/bluetooth_ext" />
+    <project path="vendor/qcom/opensource/commonsys/bluetooth_ext" name="TheXPerienceProject/android_vendor_qcom_opensource_commonsys_bluetooth_ext" remote="xpe" />
+    <remove-project name="platform/vendor/qcom-opensource/bluetooth-commonsys-intf" />
+    <project name="TheXPerienceProject/vendor_qcom_opensource_commonsys-intf_bluetooth" path="vendor/qcom/opensource/commonsys-intf/bluetooth" remote="xpe" >
+      <linkfile dest="vendor/qcom/defs/board-defs/system/bt-commonsys-intf-board.mk" src="bt-commonsys-intf-board.mk"/>
+      <linkfile dest="vendor/qcom/defs/board-defs/vendor/bt-commonsys-intf-board.mk" src="bt-commonsys-intf-board.mk"/>
+      <linkfile dest="vendor/qcom/defs/product-defs/system/bt-system-opensource-product.mk" src="bt-system-opensource-product.mk"/>
+    </project>
+    <remove-project name="platform/vendor/qcom-opensource/core-utils" />
+    <project path="vendor/qcom/opensource/core-utils" name="TheXPerienceProject/vendor_qcom_opensource_core-utils" remote="xpe">
+        <linkfile dest="vendor/qcom/build/tasks/QSSI_violators.mk" src="build/QSSI_violators.mk"/>
+        <linkfile dest="vendor/qcom/build/tasks/QMAA_enforcement.mk" src="build/QMAA_enforcement.mk"/>
+        <linkfile dest="build.sh" src="build/build.sh"/>
+    </project>
+    <remove-project name="platform/vendor/qcom-opensource/cryptfs_hw" />
+    <project path="vendor/qcom/opensource/commonsys/cryptfs_hw" name="TheXPerienceProject/android_vendor_qcom_opensource_cryptfs_hw" remote="xpe" />
+    <remove-project name="platform/vendor/qcom-opensource/data-ipa-cfg-mgr" />
+    <project path="vendor/qcom/opensource/data-ipa-cfg-mgr" name="TheXPerienceProject/vendor_qcom-opensource_data-ipa-cfg-mgr" remote="xpe" >
+        <linkfile dest="vendor/qcom/defs/product-defs/vendor/ipacm_vendor_product.mk" src="ipacm_vendor_product.mk"/>
+    </project>
+    <remove-project name="platform/vendor/qcom-opensource/dataservices" />
+    <project name="TheXPerienceProject/android_vendor_qcom_opensource_dataservices" path="vendor/qcom/opensource/dataservices" remote="xpe" />
+    <remove-project name="platform/vendor/qcom-opensource/display-commonsys-intf"/>
+    <project path="vendor/qcom/opensource/commonsys-intf/display" name="TheXPerienceProject/vendor-qcom-opensource-display-commonsys-intf" remote="xpe" >
+        <linkfile dest="vendor/qcom/defs/product-defs/system/display-product-system.mk" src="config/display-product-system.mk"/>
+    </project>
+    <remove-project name="platform/vendor/qcom-opensource/fm-commonsys" />
+    <project path="vendor/qcom/opensource/commonsys/fm" name="TheXPerienceProject/vendor_qcom-opensource_fm-commonsys" remote="xpe" />
+    <remove-project name="platform/vendor/qcom-opensource/interfaces" />
+    <project path="vendor/qcom/opensource/interfaces" name="TheXPerienceProject/android_vendor_qcom_opensource_interfaces" remote="xpe" />
+    <remove-project name="platform/vendor/qcom-opensource/system/bt" />
+    <project path="vendor/qcom/opensource/commonsys/system/bt" name="TheXPerienceProject/android_vendor_qcom_opensource_commonsys_system_bt" remote="xpe" />
+    <remove-project name="platform/vendor/codeaurora/telephony" />
+    <project path="vendor/codeaurora/commonsys/telephony" name="TheXPerienceProject/android_vendor_codeaurora_commonsys_telephony" remote="xpe"/>
+    <remove-project name="platform/vendor/qcom-opensource/power" />
+    <project path="vendor/qcom/opensource/power" name="TheXPerienceProject/vendor_qcom-opensource_power" remote="xpe" >
+       <linkfile dest="vendor/qcom/defs/product-defs/vendor/power-vendor-product.mk" src="power-vendor-product.mk"/>
+       <linkfile dest="vendor/qcom/defs/board-defs/vendor/power-vendor-board.mk" src="power-vendor-board.mk"/>
+    </project>
+    <remove-project name="platform/vendor/qcom-opensource/recovery-ext" />
+    <project name="TheXPerienceProject/android_vendor_qcom-opensource_recovery-ext" path="vendor/qcom/opensource/recovery-ext" remote="xpe" />
+    <project path="vendor/qcom/common" name="TheXPerienceProject/android_vendor_qcom_common" clone-depth="1" remote="xpe" />
+
+    <!--Blob from AOSPA-->
+    <project path="vendor/qcom/sdclang-8.0/linux-x86" name="ThankYouMario/proprietary_vendor_qcom_sdclang-8.0_linux-x86" revision="quartz" remote="github" />
+    <!-- GCC -->
+    <project path="prebuilts/gcc/linux-x86/aarch64/aarch64-elf" name="AOSPA/android_prebuilts_gcc_linux-x86_aarch64_aarch64-elf" remote="github" groups="aospa" revision="master" clone-depth="1" />
+    <project path="prebuilts/gcc/linux-x86/arm/arm-eabi" name="AOSPA/android_prebuilts_gcc_linux-x86_arm_arm-eabi" remote="github" groups="aospa" revision="master" clone-depth="1" />
+
+    <!--Non common but I always forget to fetch them when I change from server so fetch them too anywas have less space -->
+    <project path="external/bson" name="TheXPerienceProject/android_external_bson" remote="xpe" />
+    <project path="packages/resources/devicesettings" name="LineageOS/android_packages_resources_devicesettings" remote="github" revision="lineage-17.0" />
+
     <!--Cleanups -->
     <!-- Obsolete Packages -->
     <!--and non obsolete but not needed by all -->
@@ -93,5 +235,6 @@
     <remove-project name="platform/packages/apps/Gallery"/>
     <remove-project name="platform/packages/apps/Browser2" />
     <remove-project name="platform/vendor/codeaurora/packages/apps/Dialer"/>
+    <remove-project name="platform/vendor/qcom-opensource/fst-manager" />
 
 </manifest>
