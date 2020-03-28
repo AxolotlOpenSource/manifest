@@ -44,6 +44,9 @@
     <remove-project name="device/generic/goldfish-opengl"/>
     <remove-project name="device/qcom/common" />
     <project path="device/qcom/common" name="AxolotlOpenSource/android_device_qcom_common" remote="ax" />
+    <remove-project name="device/qcom/sepolicy" />
+    <project path="device/qcom/sepolicy" name="AxolotlOpenSource/android_device_qcom_sepolicy" remote="ax" />
+    <project path="device/qcom/sepolicy-legacy-um" name="AxolotlOpenSource/android_device_qcom_sepolicy" remote="ax" revision="ax-Q-legacy-um" />
 
     <!-- External -->
     <remove-project name="platform/external/ant-wireless/ant_native" />
