@@ -14,7 +14,7 @@
 
     <!-- Bootable -->
     <remove-project name="platform/bootable/recovery" />
-    <project path="bootable/recovery" name="TheXPerienceProject/android_bootable_recovery" groups="pdk" remote="xpe" />
+    <project path="bootable/recovery" name="AxolotlOpenSource/android_bootable_recovery" groups="pdk" remote="ax" />
 
     <!-- Build-->
     <remove-project name="platform/build" />
@@ -73,7 +73,7 @@
     <remove-project name="platform/frameworks/base" />
     <project path="frameworks/base" name="AxolotlOpenSource/android_frameworks_base" groups="pdk-cw-fs,pdk-fs" remote="ax" />
     <remove-project name="platform/frameworks/native" />
-    <project path="frameworks/native" name="TheXPerienceProject/android_frameworks_native" groups="pdk" remote="xpe"  />
+    <project path="frameworks/native" name="AxolotlOpenSource/android_frameworks_native" groups="pdk" remote="ax"  />
     <remove-project name="platform/frameworks/opt/net/wifi" />
     <project path="frameworks/opt/net/wifi" name="TheXPerienceProject/android_frameworks_opt_net_wifi" groups="pdk" remote="xpe"  />
     <remove-project name="platform/frameworks/opt/telephony" />
@@ -121,17 +121,19 @@
 
 
     <!-- System -->
-    <project path="system/tools/dtbtool" name="TheXPerienceProject/android_system_tools_dtbtool" groups="pdk" remote="xpe" />
-    <remove-project name="platform/system/libhidl" />
+    <remove-project name="platform/system/core" />
+    <project path="system/core" name="AxolotlOpenSource/android_system_core" groups="pdk" remote="ax" />
     <project path="system/libhidl" name="TheXPerienceProject/android_system_libhidl" remote="xpe" groups="xpe" />
     <remove-project name="platform/system/qcom" />
     <project path="vendor/qcom/opensource/softap" name="TheXPerienceProject/android_system_qcom" groups="qcom" remote="xpe" />
     <remove-project name="platform/system/sepolicy" />
     <project path="system/sepolicy" name="TheXPerienceProject/android_system_sepolicy" groups="pdk" remote="xpe" />
+    <project path="system/tools/dtbtool" name="TheXPerienceProject/android_system_tools_dtbtool" groups="pdk" remote="xpe" />
+    <remove-project name="platform/system/libhidl" />
     <remove-project name="platform/system/update_engine" />
     <project path="system/update_engine" name="TheXPerienceProject/android_system_update_engine" groups="pdk" remote="xpe" />
     <remove-project name="platform/system/vold" />
-    <project path="system/vold" name="TheXPerienceProject/android_system_vold" groups="pdk" remote="xpe" />
+    <project path="system/vold" name="AxolotlOpenSource/android_system_vold" groups="pdk" remote="ax" />
     
     <!-- Vendor -->
     <remove-project name="platform/vendor/qcom-opensource/bluetooth" />
