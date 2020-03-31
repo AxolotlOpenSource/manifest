@@ -112,6 +112,28 @@
     <remove-project name="platform/libcore" />
     <project path="libcore" name="TheXPerienceProject/android_libcore" remote="xpe" />
 
+    <!-- Packages -->
+    <remove-project name="platform/packages/apps/Launcher3"/>
+    <project path="packages/apps/Launcher3" name="TheXPerienceProject/android_packages_apps_Launcher3" remote="xpe" />
+    <project path="packages/apps/OmniStyle" name="TheXPerienceProject/android_packages_apps_omnistyle" remote="xpe" />
+    <project path="packages/overlay/axolotl" name="TheXPerienceProject/android_packages_overlay_XPerience" remote="xpe" />
+    <remove-project name="platform/packages/apps/PackageInstaller"/>
+    <project name="TheXPerienceProject/android_packages_apps_PackageInstaller" path="packages/apps/PermissionController" remote="xpe" />
+    <remove-project name="platform/packages/apps/Settings" />
+    <project path="packages/apps/Settings" name="AxolotlOpenSource/android_packages_apps_settings" groups="pdk-fs" remote="ax" />
+    <remove-project name="platform/packages/apps/ThemePicker"/>
+    <project path="packages/apps/ThemePicker" name="TheXPerienceProject/android_packages_apps_ThemePicker" remote="xpe" />
+    <remove-project name="platform/packages/apps/Music" />
+    <project path="packages/apps/XMusic" name="TheXPerienceProject/android_packages_apps_XMusic" remote="xpe" />
+    <remove-project name="platform/packages/inputmethods/LatinIME"/>
+    <project path="packages/inputmethods/LatinIME" name="TheXPerienceProject/android_packages_inputmethods_LatinIME" remote="xpe" />
+
+    <!--Providers-->
+    <remove-project name="platform/packages/providers/DownloadProvider" />
+    <project path="packages/providers/DownloadProvider" name="TheXPerienceProject/packages_providers_DownloadProvider" groups="pdk-cw-fs,pdk-fs" remote="xpe" />
+    <remove-project name="platform/packages/providers/MediaProvider" />
+    <project path="packages/providers/MediaProvider" name="TheXPerienceProject/android_packages_providers_MediaProvider" groups="pdk-cw-fs,pdk-fs" remote="xpe" />
+
     <!-- Prebuilts -->
     <project path="prebuilts/openssl" name="LineageOS/android_prebuilts_openssl" clone-depth="1" remote="github" revision="lineage-17.0"/>
     <project path="prebuilts/tools-lineage" name="TheXPerienceProject/android_prebuilts_tools-lineage" clone-depth="1" remote="xpe"/>
@@ -119,6 +141,11 @@
     <project name="TheXPerienceProject/android_prebuilts_r8" path="prebuilts/r8" clone-depth="1" remote="xpe" />
     <project path="prebuilts/clang/host/linux-x86/clang-r377782c" name="TheXPerienceProject/android_prebuilts_clang_host_linux-x86_clang-r377782c" clone-depth="1" remote="xpe"/>
 
+    <!-- Services -->
+    <remove-project name="platform/packages/services/Telecomm" />
+    <project path="packages/services/Telecomm" name="TheXPerienceProject/android_packages_services_Telecomm" remote="xpe" />
+    <remove-project name="platform/packages/services/Telephony" />
+    <project path="packages/services/Telephony" name="TheXPerienceProject/android_packages_services_Telephony" remote="xpe" />
 
     <!-- System -->
     <remove-project name="platform/system/core" />
